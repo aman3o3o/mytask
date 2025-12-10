@@ -133,4 +133,4 @@ let datadelete = (req, res) => {
     }
 }
 
-module.exports = { datainsert, datafetch, datafetchone, dataupdate, datadelete };
+module.exports = { datainsert, datafetch, datafetchone, dataupdate, datadelete , maindata};

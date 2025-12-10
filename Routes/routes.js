@@ -10,4 +10,8 @@ dataroute.get("/fetchone/:id",datafetchone);
 dataroute.put("/update/:id",dataupdate);
 dataroute.delete("/delete/:id",datadelete);
 
+let assessmentroute = express.Router();
+
+assessmentroute.post("/assessments/generate",generateQues);
+
 module.exports={dataroute};
