@@ -15,12 +15,12 @@ let planner = (studentprofile,assessmentRequest,dbtopic) => {
         return dbtopic.includes(data);
     })
 
-    if(mastered_topics.length===0 && learning_goals===0){
-        return "please provide valid topic"
+    if(mastered_topics.length===0 && learning_goals.length===0){
+        return "please provide valid topic";
     }
 
     if(!['REVIEW','CHALLENGE','NEW_TOPIC_INTRODUCTION'].includes(strategy)){
-        return "please provide valid strategy"
+        return "please provide valid strategy";
     }
 
     let topics_to_cover = []
@@ -31,7 +31,7 @@ let planner = (studentprofile,assessmentRequest,dbtopic) => {
     }
     else if(strategy==="NEW_TOPIC_INTRODUCTION"){
         if(learning_goals.length===0){
-            return "Learning goal is empty"
+            return "Learning goal is empty";
         }
         topics_to_cover = [...learning_goals];
         difficulty = [1,2]

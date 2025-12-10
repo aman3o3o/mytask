@@ -1,5 +1,5 @@
 const express = require("express");
-const { datainsert, datafetch, dataupdate, datadelete, datafetchone} = require("../controller/controller");
+const { datainsert, datafetch, dataupdate, datadelete, datafetchone} = require("../controller/crud");
 const generateQues = require("../controller/assessment");
 
 let dataroute = express.Router();

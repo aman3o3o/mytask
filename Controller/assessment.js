@@ -1,4 +1,4 @@
-let {maindata} = require("./controller");
+let {maindata} = require("./crud");
 let planner = require("../component/planner");
 let executor = require("../component/executor");
 
@@ -12,6 +12,11 @@ let generateQues = (req,res) => {
         let {assessmentRequest} = req.body;
 
         let assessmentPlan = planner(studentprofile,assessmentRequest,db_topics);
+        if(typeof assessmentPlan === "string"){
+            return res.status(400).json({
+                message:assessmentPlan
+            })
+        }
         let generatedAssessment = executor(assessmentPlan);
         return res.status(200).json({
             success:true,
@@ -22,7 +27,7 @@ let generateQues = (req,res) => {
         console.log(err);
         return res.status(500).json({
             err_name : err.name,
-            err_message:err.meesage
+            err_message:err.message
         })
     }
 }

@@ -1,4 +1,4 @@
-let { maindata } = require("../controller/controller");
+let { maindata } = require("../controller/crud");
 let executor = (plan) => {
     let topic = plan.topics_to_cover;
     let difficulty = plan.difficulty;
