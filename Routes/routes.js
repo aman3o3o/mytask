@@ -1,6 +1,6 @@
 const express = require("express");
-const { datainsert, datafetch, dataupdate, datadelete, datafetchone} = require("../Controller/controller");
-datainsert
+const { datainsert, datafetch, dataupdate, datadelete, datafetchone} = require("../controller/controller");
+const generateQues = require("../controller/assessment");
 
 let dataroute = express.Router();
 
@@ -14,4 +14,4 @@ let assessmentroute = express.Router();
 
 assessmentroute.post("/assessments/generate",generateQues);
 
-module.exports={dataroute};
+module.exports={dataroute , assessmentroute};

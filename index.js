@@ -1,12 +1,13 @@
 const express = require("express");
-const { dataroute } = require("./Routes/routes");
+const { dataroute, assessmentroute } = require("./Routes/routes");
 require("dotenv").config();
-
 const app = express();
 
 app.use(express.json());
 
 app.use("/api",dataroute);
+
+app.use("/api",assessmentroute);
 
 app.use((req, res, next) => {
     return res.status(404).json({
