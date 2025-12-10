@@ -3498,5 +3498,12 @@
     "topic": "Statistics",
     "difficulty": 5,
     "estimated_time_to_solve_minutes": 6
+  },
+  {
+    "text": "Aman Solve for x in the equation: 2x + 10 = 18.",
+    "topic": "algebra",
+    "difficulty": 2,
+    "estimated_time_to_solve_minutes": 2,
+    "id": "c64dc5ce-3df6-4eed-b06f-24979f92b4a5"
   }
 ]
