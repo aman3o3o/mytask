@@ -1,9 +1,9 @@
 const {v4:uuidv4} = require("uuid");
 
-let planner = (studentprofile,assessmentRequest,dbtopic) => {
+let planner = (studentProfile,assessmentRequest,dbtopic) => {
 
-    let mastered_topics = studentprofile.mastered_topics || [];
-    let learning_goals = studentprofile.learning_goals || [];
+    let mastered_topics = studentProfile.mastered_topics || [];
+    let learning_goals = studentProfile.learning_goals || [];
     let strategy = assessmentRequest.pedagogical_strategy;
     let maxTime = assessmentRequest.max_total_time_minutes;
     let reasoning_log = [];

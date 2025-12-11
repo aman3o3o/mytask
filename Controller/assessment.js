@@ -10,10 +10,10 @@ db_topics = [...new Set(db_topics)];
 
 let generateQues = (req,res) => {
     try{
-        let {studentprofile} = req.body;
+        let {studentProfile} = req.body;
         let {assessmentRequest} = req.body;
 
-        let assessmentPlan = planner(studentprofile,assessmentRequest,db_topics);
+        let assessmentPlan = planner(studentProfile,assessmentRequest,db_topics);
         if(typeof assessmentPlan === "string"){
             return res.status(400).json({
                 message:assessmentPlan
