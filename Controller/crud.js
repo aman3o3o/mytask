@@ -93,7 +93,7 @@ let dataupdate = (req, res) => {
                 message: "id not found"
             })
         }
-        maindata[index] = { ...maindata[index], ...data };
+        maindata[index] = { ...maindata[index], ...req.body };
         fs.writeFileSync("../ProblemSet.json", JSON.stringify(maindata, null, 2));
         return res.status(200).json({
             success: true,
