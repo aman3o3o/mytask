@@ -17,7 +17,7 @@ let datainsert = (req, res) => {
         }
         else {
             return res.status(400).json({
-                message: "please provide valid key name"
+                message: "please provide valid key details"
             })
         }
     }
@@ -76,7 +76,14 @@ let datafetchone = (req, res) => {
 
 let dataupdate = (req, res) => {
     try {
-        let data = req.body;
+        let valid_key = Object.keys(req.body).every((key)=>{
+            return ["text","topic","difficulty","estimated_time_to_solve_minutes"].includes(key);
+        })
+        if(!valid_key){
+            return res.status(400).json({
+                message:"please provide valid key details"
+            })
+        }
         let id = req.params.id;
         let index = maindata.findIndex((obj) => {
             return obj.id === id
@@ -133,4 +140,4 @@ let datadelete = (req, res) => {
     }
 }
 
-module.exports = { datainsert, datafetch, datafetchone, dataupdate, datadelete , maindata};
+module.exports = { datainsert, datafetch, datafetchone, dataupdate, datadelete, maindata };

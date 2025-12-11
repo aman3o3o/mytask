@@ -6,6 +6,8 @@ let db_topics = maindata.map((data)=>{
     return data.topic
 })
 
+db_topics = [...new Set(db_topics)];
+
 let generateQues = (req,res) => {
     try{
         let {studentprofile} = req.body;

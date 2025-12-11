@@ -5,8 +5,10 @@ const app = express();
 
 app.use(express.json());
 
+// CRUD ROUTES
 app.use("/api",dataroute);
 
+// ASSESSMENT ROUTES
 app.use("/api",assessmentroute);
 
 app.use((req, res, next) => {
@@ -16,7 +18,7 @@ app.use((req, res, next) => {
 })
 
 app.listen(process.env.PORT,()=>{
-    console.log("app is listening at port 3000");
+    console.log(`app is listening at port ${process.env.PORT}`);
 })
 
 
