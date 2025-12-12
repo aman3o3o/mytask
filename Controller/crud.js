@@ -9,7 +9,7 @@ let datainsert = (req, res) => {
         if (data.text && data.topic && data.difficulty && data.estimated_time_to_solve_minutes) {
             data.id = uuidv4();
             maindata.push(data);
-            fs.writeFileSync("../ProblemSet.json", JSON.stringify(maindata, null, 2));
+            fs.writeFileSync("../ProblemSet.json", JSON.stringify(maindata));
             return res.status(200).json({
                 success: true,
                 message: "data insert successfully"
@@ -94,7 +94,7 @@ let dataupdate = (req, res) => {
             })
         }
         maindata[index] = { ...maindata[index], ...req.body };
-        fs.writeFileSync("../ProblemSet.json", JSON.stringify(maindata, null, 2));
+        fs.writeFileSync("../ProblemSet.json", JSON.stringify(maindata));
         return res.status(200).json({
             success: true,
             message: "data updated successfully"
